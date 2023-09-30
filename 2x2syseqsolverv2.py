@@ -1,33 +1,35 @@
 print("=======================================================================================================")
 a1 = int(input("a: "))
 b1 = int(input("b: "))
-g1 = int(input("g: "))
+g1 = int(input("c: "))
 a2 = int(input("a': "))
 b2 = int(input("b': "))
-g2 = int(input("g': "))
+g2 = int(input("c': "))
+print("=======================================================================================================")
 dpart1 = a1 * b2
 dpart2 = a2 * b1
 dpart3 = (dpart1) - (dpart2)
 if b2 < 0:
-    print("=======================================================================================================")
-    print("a * b' = ",a1," * (",b2,")")
-if b2 > 0:
-    print("=======================================================================================================")
-    print("a * b' = ",a1," * ",b2)
+    b2if = "(" + str(b2) + ")"
+else:
+    b2if = str(b2)
 if b1 < 0:
-    print("a' * b = ",a2," * (",b1,")")
-    print("=======================================================================================================")
-if b1 > 0:
-    print("a' * b = ",a2," * ",b1)
-    print("=======================================================================================================")
+    b1if = "(" + str(b1) + ")"
+else:
+    b1if = str(b1)
 if dpart2 < 0:
-    dpart2small01 = (dpart2) * (-1)
-    print("D = (a * b') * (a' * b) = ",dpart1," - (",dpart2,")")
-    print("D = (a * b') * (a' * b) = ",dpart1," + ",dpart2small01)
-if dpart2 > 0:
-    print("D = (a * b') * (a' * b) = ",dpart1," - ",dpart2)
-print("D = ",dpart3)
+    dpart2if = "(" + str(dpart2) + ")"
+else:
+    dpart2if = str(dpart2)
+if dpart2 < 0:
+    dpart2mulmin1 = (dpart2) * (-1)
+    dpart2if = "(" + str(dpart2) + ") = " + str(dpart1) + " + " + str(dpart2mulmin1) + " = " + str(dpart3)
+else:
+    dpart2if = str(dpart2) + " = " + str(dpart3)
+print("D = |",a1 ,b2,"| = (" + str(a1) + " * " + str(b2if) + ") - (" + str(a2) + " * " + str(b1if) + ") = " + str(dpart1) + " - " + str(dpart2if))
+print("    |",a2 ,b1,"|")
 print("=======================================================================================================")
+
 if dpart3 == 0:
     print("The system of 2x2 cannot be solved or it has a number of infinite possible solutions.")
     print("=======================================================================================================")
@@ -35,49 +37,45 @@ else:
     dxpart1 = (g1) * (b2)
     dxpart2 = (g2) * (b1)
     dxpart3 = (dxpart1) - (dxpart2)
+    blank = str(" ")
     if b2 < 0:
-        print("g * b' = ",g1," * (",b2,")")
-    if b2 > 0:
-        print("g * b' = ",g1," * ",b2 )
-    print("g * 'b = ",dxpart1)
-    print("=======================================================================================================")
+        b2if = "(" + str(b2) + ")"
+    else:
+        b2if = str(b2)
     if b1 < 0:
-        b1small01 = (b1) * (-1)
-        print("g' * b = ",g2," * (",b1,")")
-    if b1 > 0:
-        print("g' * b = ",g2," * ",b1)
-    print("g' * b = ",dxpart2)
-    print("=======================================================================================================")
+        b1if = "(" + str(b1) + ")"
+    else:
+        b1if = str(b1)
     if dxpart2 < 0:
-        dxpart2small01 = (dxpart2) * (-1)
-        print("D(x) = ",dxpart1," - (",dxpart2,")")
-        print("D(x) = ",dxpart1," + ",dxpart2small01)
-    if dxpart2 > 0:
-        print("D(x) = ",dxpart1," - ",dxpart2)
-    print("D(x) = ",dxpart3)
+        dxpart2if = "(" + str(dxpart2) + ")"
+    else:
+        dxpart2if = str(dxpart2)
+    if dxpart2 < 0:
+        dxpart2mulmin1 = (dxpart2) * (-1)
+        dxpart2if = "(" + str(dxpart2) + ") = " + str(dxpart1) + " + " + str(dxpart2mulmin1) + " = " + str(dxpart3)
+    else:
+        dxpart2if = str(dxpart2) + " = " + str(dxpart3)
+    print("D(x) = |",g1 ,b2,"| = (" + str(g1) + " * " + str(b2if) + ") - (" + str(g2) + " * " + str(b1if) + ") =" + str(dxpart1) + " - " + str(dxpart2if))
+    print("D(x) = |",g2 ,b1,"|")
     print("=======================================================================================================")
     dypart1 = (a1) * (g2)
     dypart2 = (a2) * (g1)
     dypart3 = (dypart1) - (dypart2)
     if g2 < 0:
-        print("a * g' = ",a1," * (",g2,")")
-    if g2 > 0:
-        print("a * g' = ",a1," * ",g2)
-    print("a * g' = ",dypart1)
-    print("=======================================================================================================")
+        g2if = "(" + str(g2) + ")"
+    else:
+        g2if = str(g2)
     if g1 < 0:
-        print("a' * g = ",a2," * (",g1,")")
-    if g1 > 0:
-        print("a' * g = ",a2," * ",g1)
-    print("a * g = ",dypart2)
-    print("=======================================================================================================")
+        g1if = "(" + str(g1) + ")"
+    else:
+        g1if = str(g1)
     if dypart2 < 0:
-        dypart2small01 = (dypart2) * (-1)
-        print("D(y) = ",dypart1," - (",dypart2,")")
-        print("D(y) = ",dypart1," + ",dypart2small01)
-    if dypart2 > 0:
-        print("D(y) = ",dypart1," - ",dypart2)
-    print("D(y) = ", dypart3)
+        dypart2mulmin1 = (dypart2) * (-1)
+        dypart2if = "(" + str(dypart2) + ") = " + str(dypart1) + " + " + str(dypart2mulmin1) + " = " + str(dypart3)
+    else:
+        dypart2if = str(dypart2) + " = " + str(dypart3)
+    print("D(y) = |",a1 ,g2,"| = " + str(a1) + " * " + str(g2if) + " - (" + str(a2) + " * " + str(g1if) + ") = " + str(dypart1) + " - " + str(dypart2if))
+    print("D(y) = |",a2 ,g1,"|")
     print("=======================================================================================================")
     x = (dxpart3) / (dpart3)
     y = (dypart3) / (dpart3)
@@ -85,9 +83,9 @@ else:
     print("x = ------- = -------- = ",x)
     print("      D      ",dpart3                                                                                             )
     print("=======================================================================================================")
-    print("      D(y)   ", dxpart3                                                                                           )
-    print("x = ------- = -------- = ",y)
+    print("      D(y)   ", dypart3                                                                                           )
+    print("y = ------- = -------- = ",y)
     print("      D      ", dpart3                                                                                            )
     print("=======================================================================================================")
-    print("A(",x,",",y,")")
+    print("(",x,",",y,")")
     print("=======================================================================================================")
