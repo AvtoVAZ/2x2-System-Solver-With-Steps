@@ -9,10 +9,18 @@ g1 = int(input("c: "))
 a2 = int(input("a': "))
 b2 = int(input("b': "))
 g2 = int(input("c': "))
+if b1 > 0:
+    b1tablesys = " +" + str(b1)
+else:
+    b1tablesys = " " + str(b1)
+if b2 > 0:
+    b2tablesys = " +" + str(b2)
+else:
+    b2tablesys = " " + str(b2)
 print("=======================================================================================================")
 print("---")
-print("| ",a1,"x ± ",b1,"y = ",g1)
-print("| ",a2,"x ± ",b2,"y = ",g2)
+print("| ",a1,"x",b1tablesys,"y = ",g1)
+print("| ",a2,"x",b2tablesys,"y = ",g2)
 print("---")
 print("=======================================================================================================")
 dpart1 = (a1) * (b2)
