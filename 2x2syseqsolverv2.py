@@ -23,8 +23,8 @@ print("| ",a1,"x",b1tablesys,"y = ",g1)
 print("| ",a2,"x",b2tablesys,"y = ",g2)
 print("---")
 print("=======================================================================================================")
-dpart1 = a1 * b2
-dpart2 = a2 * b1
+dpart1 = (a1) * (b2)
+dpart2 = (a2) * (b1)
 dpart3 = (dpart1) - (dpart2)
 if b2 < 0:
     b2if = "(" + str(b2) + ")"
@@ -54,7 +54,6 @@ else:
     dxpart1 = (g1) * (b2)
     dxpart2 = (g2) * (b1)
     dxpart3 = (dxpart1) - (dxpart2)
-    blank = str(" ")
     if b2 < 0:
         b2if = "(" + str(b2) + ")"
     else:
@@ -99,11 +98,11 @@ else:
     if x == 0:
         xwithoutminus = "0"
     else:
-        x = str(x)
+        xwithoutminus = str(x)
     if y == 0:
         ywithoutminus = "0"
     else:
-        y = str(y)
+        ywithoutminus = str(y)
     print("      D(x)   ",dxpart3                                                                                            )
     print("x = ------- = -------- = ",xwithoutminus)
     print("      D      ",dpart3                                                                                             )
