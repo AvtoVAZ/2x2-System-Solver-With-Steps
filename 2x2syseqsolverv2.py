@@ -1,4 +1,4 @@
-print("=======================================================================================================")
+pprint("=======================================================================================================")
 print("---")
 print("| ax ± by = c")
 print("| a'x ± b'y = c")
@@ -23,8 +23,8 @@ print("| ",a1,"x",b1tablesys,"y = ",g1)
 print("| ",a2,"x",b2tablesys,"y = ",g2)
 print("---")
 print("=======================================================================================================")
-dpart1 = (a1) * (b2)
-dpart2 = (a2) * (b1)
+dpart1 = a1 * b2
+dpart2 = a2 * b1
 dpart3 = (dpart1) - (dpart2)
 if b2 < 0:
     b2if = "(" + str(b2) + ")"
@@ -73,7 +73,7 @@ else:
     else:
         dxpart2if = str(dxpart2) + " = " + str(dxpart3)
     print("D(x) = |",g1 ,b2,"| = (" + str(g1) + " * " + str(b2if) + ") - (" + str(g2) + " * " + str(b1if) + ") =" + str(dxpart1) + " - " + str(dxpart2if))
-    print("D(x) = |",g2 ,b1,"|")
+    print("       |",g2 ,b1,"|")
     print("=======================================================================================================")
     dypart1 = (a1) * (g2)
     dypart2 = (a2) * (g1)
@@ -91,19 +91,26 @@ else:
         dypart2if = "(" + str(dypart2) + ") = " + str(dypart1) + " + " + str(dypart2mulmin1) + " = " + str(dypart3)
     else:
         dypart2if = str(dypart2) + " = " + str(dypart3)
-    print("D(y) = |",a1 ,g2,"| = " + str(a1) + " * " + str(g2if) + " - (" + str(a2) + " * " + str(g1if) + ") = " + str(dypart1) + " - " + str(dypart2if))
-    print("D(y) = |",a2 ,g1,"|")
+    print("D(y) = |",a1 ,g2,"| = (" + str(a1) + " * " + str(g2if) + ") - (" + str(a2) + " * " + str(g1if) + ") = " + str(dypart1) + " - " + str(dypart2if))
+    print("       |",a2 ,g1,"|")
     print("=======================================================================================================")
     x = (dxpart3) / (dpart3)
     y = (dypart3) / (dpart3)
+    if x == 0:
+        xwithoutminus = "0"
+    else:
+        x = str(x)
+    if y == 0:
+        ywithoutminus = "0"
+    else:
+        y = str(y)
     print("      D(x)   ",dxpart3                                                                                            )
-    print("x = ------- = -------- = ",x)
+    print("x = ------- = -------- = ",xwithoutminus)
     print("      D      ",dpart3                                                                                             )
     print("=======================================================================================================")
     print("      D(y)   ", dypart3                                                                                           )
-    print("y = ------- = -------- = ",y)
+    print("y = ------- = -------- = ",ywithoutminus)
     print("      D      ", dpart3                                                                                            )
     print("=======================================================================================================")
-    print("(",x,",",y,")")
+    print("(",xwithoutminus,",",ywithoutminus,")")
     print("=======================================================================================================")
-
